@@ -21,7 +21,7 @@ class Pallet
 
         int getRemainingSpace();
 
-        bool relocateEmptyPallet(std::string itemName, int itemCapacity);
+        bool reallocateEmptyPallet(std::string itemName, int itemCapacity);
 
         bool takeOne();
 

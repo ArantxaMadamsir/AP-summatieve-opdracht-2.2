@@ -20,7 +20,7 @@ int Pallet::getRemainingSpace()
     return itemCapacity;
 }
 
-bool Pallet::relocateEmptyPallet(std::string itemName, int itemCapacity)
+bool Pallet::reallocateEmptyPallet(std::string itemName, int itemCapacity)
 {
     // Still to do
 }
