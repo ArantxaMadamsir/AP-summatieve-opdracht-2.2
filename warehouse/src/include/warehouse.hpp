@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
-
+#include "employee.hpp"
+#include "shelf.hpp"
 
 
 class Warehouse

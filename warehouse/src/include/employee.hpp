@@ -3,7 +3,7 @@
 #include "warehouse.hpp"
 
 
-class Employee : public Warehouse
+class Employee
 {
     private:
        const std::string name;
@@ -24,5 +24,4 @@ class Employee : public Warehouse
        void setForkliftCertificate(bool forkliftCertificate);
 
 };
-
 

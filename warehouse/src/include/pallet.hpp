@@ -3,7 +3,7 @@
 #include "shelf.hpp"
 
 
-class Pallet: public Shelf
+class Pallet
 {
     private:
         int itemCount;

@@ -3,7 +3,7 @@
 #include "warehouse.hpp"
 
 
-class Shelf : public Warehouse
+class Shelf
 {
     public:
         std::array<Pallet, 4> pallets;
@@ -13,5 +13,4 @@ class Shelf : public Warehouse
         bool swapPallet(int slot, int slot2);
 
 };
-
 
