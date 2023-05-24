@@ -1,5 +1,5 @@
 #pragma once
-class iContainer
+class IContainer
 {
 public:
     virtual bool isEmpty() const = 0;

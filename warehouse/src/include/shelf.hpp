@@ -1,9 +1,10 @@
 #pragma once
 #include <array>
-#include "warehouse.hpp"
+#include "pallet.hpp"
+#include "icontainer.hpp"
 
 
-class Shelf
+class Shelf : public IContainer 
 {
     public:
         std::array<Pallet, 4> pallets;
@@ -11,6 +12,10 @@ class Shelf
         Shelf();
 
         bool swapPallet(int slot, int slot2);
+
+        bool isEmpty() const override;
+
+        bool isFull() const override;
 
 };
 

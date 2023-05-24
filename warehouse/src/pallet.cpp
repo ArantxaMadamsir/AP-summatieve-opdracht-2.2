@@ -67,13 +67,13 @@ bool Pallet::putOne()
     }
 }
 
-bool isEmpty() const override
+bool Pallet::isEmpty() const 
 {
     return itemCount == 0;
 }
 
-bool isFull() const override
+bool Pallet::isFull() const
 {
-return itemCount == itemCapacity;
+    return itemCount == itemCapacity;
 }
 

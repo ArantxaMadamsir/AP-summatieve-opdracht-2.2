@@ -3,7 +3,7 @@
 #include "iContainer.hpp"
 
 
-class Pallet: public iContainer
+class Pallet : public IContainer
 {
     private:
         int itemCount;
