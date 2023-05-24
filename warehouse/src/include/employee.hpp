@@ -1,27 +1,27 @@
 #pragma once
 #include <string>
-#include "warehouse.hpp"
 
 
 class Employee
 {
-    private:
-       const std::string name;
-       bool busy;
-       bool forkliftCertificate;
+   private:
+      const std::string name;
 
-    public:
-       Employee(std::string name, bool forkliftCertificate);
+      bool busy;
+      
+      bool forkliftCertificate;
 
-       std::string getName();
+   public:
+      Employee(std::string name, bool forkliftCertificate);
 
-       bool getBusy();
+      std::string getName();
 
-       void setBusy(bool busy);
+      bool getBusy();
 
-       bool getForkliftCertificate();
+      void setBusy(bool busy);
 
-       void setForkliftCertificate(bool forkliftCertificate);
+      bool getForkliftCertificate();
+
+      void setForkliftCertificate(bool forkliftCertificate);
 
 };
-

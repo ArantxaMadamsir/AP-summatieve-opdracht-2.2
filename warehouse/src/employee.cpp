@@ -1,7 +1,7 @@
 #include "include/employee.hpp"
 
-Employee::Employee(std::string name, bool forkliftCertificate): name(name), forkliftCertificate(forkliftCertificate) {}
 
+Employee::Employee(std::string name, bool forkliftCertificate): name(name), forkliftCertificate(forkliftCertificate) {}
 
 std::string Employee::getName()
 {
@@ -20,11 +20,10 @@ void Employee::setBusy(bool busy)
 
 bool Employee::getForkliftCertificate()
 {
-    return getForkliftCertificate;
+    return forkliftCertificate;
 }
 
 void Employee::setForkliftCertificate(bool forkliftCertificate)
 {
     this->forkliftCertificate = forkliftCertificate;
 }
-

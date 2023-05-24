@@ -7,7 +7,9 @@ class Pallet : public IContainer
 {
     private:
         int itemCount;
+
         std::string itemName;
+
         int itemCapacity;
 
     public:
@@ -31,4 +33,3 @@ class Pallet : public IContainer
 
         bool isFull() const override;
 };
-
