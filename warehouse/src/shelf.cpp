@@ -3,7 +3,7 @@
 
 Shelf::Shelf(): pallets({Pallet(), Pallet(), Pallet(), Pallet()}) {} 
 
-bool Shelf::swapPallet(int slot, int slot2) {
+bool Shelf::swapPallet(int slot, int slot2) { // Test if method works properly without = 
     if (slot < 0 or slot >= pallets.size() or slot2 < 0 or slot2 >= pallets.size()) {
         return false;
     }
@@ -14,19 +14,23 @@ bool Shelf::swapPallet(int slot, int slot2) {
 }
 
 bool Shelf::isEmpty() const {
+    int emptyPalletCount = 0;
+
     for (Pallet pallet : pallets) {
-        if (!pallet.isEmpty()) {
-            return false;
+        if (pallet.isEmpty()) {
+            emptyPalletCount ++;
         }
     }
-    return true;
+    return emptyPalletCount == 4;
 }
 
 bool Shelf::isFull() const {
+    int fullPalletCount = 0;
+
     for (Pallet pallet : pallets) {
-        if (!pallet.isFull()) {
-            return false;
+        if (pallet.isFull()) {
+            fullPalletCount ++;
         }
     }
-    return true;
+    return fullPalletCount == 4;
 }
