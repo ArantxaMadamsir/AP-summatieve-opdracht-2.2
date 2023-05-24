@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
-#include "shelf.hpp"
+#include "iContainer.hpp"
 
 
-class Pallet
+class Pallet: public iContainer
 {
     private:
         int itemCount;
@@ -27,5 +27,8 @@ class Pallet
 
         bool putOne();
 
+        bool isEmpty() const override;
+
+        bool isFull() const override;
 };
 
