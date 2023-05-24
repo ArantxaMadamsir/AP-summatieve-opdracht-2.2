@@ -5,8 +5,7 @@
 #include "IContainer.hpp"
 
 
-class Shelf : public IContainer 
-{
+class Shelf : public IContainer {
     public:
         std::array<Pallet, 4> pallets;
 
@@ -17,5 +16,4 @@ class Shelf : public IContainer
         bool isEmpty() const override;
 
         bool isFull() const override;
-
 };

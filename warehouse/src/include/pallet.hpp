@@ -3,13 +3,12 @@
 #include "IContainer.hpp"
 
 
-class Pallet : public IContainer
-{
+class Pallet : public IContainer {
     private:
         int itemCount;
 
         std::string itemName;
-
+        
         int itemCapacity;
 
     public:

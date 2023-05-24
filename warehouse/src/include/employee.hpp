@@ -2,8 +2,7 @@
 #include <string>
 
 
-class Employee
-{
+class Employee {
    private:
       const std::string name;
 
@@ -23,5 +22,4 @@ class Employee
       bool getForkliftCertificate();
 
       void setForkliftCertificate(bool forkliftCertificate);
-
 };

@@ -5,8 +5,7 @@
 #include "shelf.hpp"
 
 
-class Warehouse
-{
+class Warehouse {
     public:
         std::vector<Employee> employees;
 

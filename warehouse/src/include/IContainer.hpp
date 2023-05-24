@@ -1,7 +1,7 @@
 #pragma once
 
-class IContainer
-{
+
+class IContainer {
     public:
         virtual bool isEmpty() const = 0;
         

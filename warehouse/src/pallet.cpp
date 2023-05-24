@@ -5,74 +5,53 @@ Pallet::Pallet(): itemName("Unknown"), itemCapacity(0), itemCount(0) {}
 
 Pallet::Pallet(std::string itemName, int itemCapacity, int itemCount): itemName(itemName), itemCapacity(itemCapacity), itemCount(itemCount) {}
 
-std::string Pallet::getItemName()
-{
+std::string Pallet::getItemName() {
     return itemName;
 }
 
-int Pallet::getItemCount()
-{
+int Pallet::getItemCount() {
     return itemCount;
 }
 
-int Pallet::getRemainingSpace()
-{
+int Pallet::getRemainingSpace() {
     return itemCapacity - itemCount;
 }
 
-bool Pallet::reallocateEmptyPallet(std::string itemName, int itemCapacity)
-{
-    if (itemCount == 0)
-    {
+bool Pallet::reallocateEmptyPallet(std::string itemName, int itemCapacity) {
+    if (itemCount == 0) {
         this->itemName = itemName;
-
         this->itemCapacity = itemCapacity;
-
         return true;
     }
-
-    else
-    {
+    else {
         return false;
     }
 }
 
-bool Pallet::takeOne()
-{
-    if (itemCount > 0)
-    {
+bool Pallet::takeOne() {
+    if (itemCount > 0) {
         itemCount --;
-
         return true;
     }
-
-    else
-    {
+    else {
         return false;
     }
 }
 
-bool Pallet::putOne()
-{
-    if (itemCapacity > itemCount)
-    {
+bool Pallet::putOne() {
+    if (itemCapacity > itemCount) {
         itemCount ++;
-
         return true;
     }
-
-    else
-    {
+    else {
         return false;
     }
 }
 
-bool Pallet::isEmpty() const 
-{
+bool Pallet::isEmpty() const {
     return itemCount == 0;
 }
 
-bool Pallet::isFull() const
-{
+bool Pallet::isFull() const {
     return itemCount == itemCapacity;
 }
