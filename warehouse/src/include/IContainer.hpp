@@ -7,5 +7,3 @@ class IContainer
         
         virtual bool isFull() const = 0;
 };
-
-

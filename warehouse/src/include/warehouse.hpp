@@ -8,19 +8,19 @@
 class Warehouse
 {
     public:
-        std::vector<Employee> Employees;
-        std::vector<Shelf> Shelves;
+        std::vector<Employee> employees;
 
+        std::vector<Shelf> shelves;
 
-    Warehouse();
+        Warehouse();
 
-    void addEmployee(Employee employee);
+        void addEmployee(Employee employee);
 
-    void addShelf(Shelf shelf);
+        void addShelf(Shelf shelf);
 
-    bool rearrangeShelf(Shelf& shelf);
+        bool rearrangeShelf(Shelf& shelf);
 
-    bool pickItems(std::string itemName, int itemCount);
+        bool pickItems(std::string itemName, int itemCount);
 
+        bool putItems(std::string itemName, int itemCount);
 };
-

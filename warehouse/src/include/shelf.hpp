@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <array>
 #include "pallet.hpp"
 #include "IContainer.hpp"
@@ -18,4 +19,3 @@ class Shelf : public IContainer
         bool isFull() const override;
 
 };
-
