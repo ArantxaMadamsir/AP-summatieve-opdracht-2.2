@@ -1,4 +1,5 @@
 #include "include/warehouse.hpp"
+#include <iostream>
 
 
 Warehouse::Warehouse(): employees({}), shelves({}) {}
@@ -42,27 +43,22 @@ bool Warehouse::rearrangeShelf(Shelf& shelf) {
         i++;
     }
 
-    if (employeeAvailable) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return employeeAvailable; // Test if this works properly
 }
 
 bool Warehouse::pickItems(std::string itemName, int itemCount) {
     // Check if there are enough items available
     int totalItemCount = 0;
 
-    for (Shelf& shelf: shelves) {
-        for (Pallet& pallet: shelf.pallets) {
+    for (Shelf& shelf : shelves) {
+        for (Pallet& pallet : shelf.pallets) {
             if (pallet.getItemName() == itemName) {
                 totalItemCount += pallet.getItemCount();
             }
         }
     }
 
-    // Return false if there are not enough items are available
+    // Return false if there are not enough items available
     if (itemCount > totalItemCount) {
         return false;
     }
@@ -70,27 +66,22 @@ bool Warehouse::pickItems(std::string itemName, int itemCount) {
     // Pick items from the pallets
     int itemsPicked = 0;
 
-    for (Shelf& shelf: shelves) {
-        for (Pallet& pallet: shelf.pallets) {
+    for (Shelf& shelf : shelves) {
+        for (Pallet& pallet : shelf.pallets) {
             if (pallet.getItemName() == itemName) {
                 while (pallet.getItemCount() > 0 && itemsPicked != itemCount) {
                     if (pallet.takeOne()) {
                         itemsPicked++;
-                    }
-
-                    else {
+                    } else {
                         return false;
                     }
                 }
             }
-
-            if (itemsPicked == itemCount) {
-                return true;
-            }
         }
     }
 
-    return false;
+    // Return true if the required number of items have been picked
+    return itemsPicked == itemCount; 
 }
 
 bool Warehouse::putItems(std::string itemName, int itemCount) {
