@@ -8,4 +8,4 @@ The asssignment was to program the classes given in the following UML:
 1. Clone this repository in an IDE;
 2. Compile and run the code with Makefile:
    - To run the main.cpp script, change the launch target of the Makefile to main;
-   - To run the tests, change the launch target of the Makefile to test_vector.
+   - To run the tests, change the launch target of the Makefile to test.
