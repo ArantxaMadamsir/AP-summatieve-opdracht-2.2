@@ -74,7 +74,7 @@ bool Warehouse::pickItems(std::string itemName, int itemCount) {
             if (pallet.getItemName() == itemName) {
                 while (pallet.getItemCount() > 0 && itemsPicked != itemCount) {
                     if (pallet.takeOne()) {
-                        itemsPicked++; // Remove this because it's redundant?
+                        itemsPicked++;
                     } 
                 }
             }
@@ -83,7 +83,7 @@ bool Warehouse::pickItems(std::string itemName, int itemCount) {
     return true;
 }
 
-bool Warehouse::checkEnoughRemainingSpace(std::string itemName, int itemCount) {
+int Warehouse::checkEnoughRemainingSpace(std::string itemName, int itemCount) {
     int totalRemainingSpace = 0;
     for (Shelf& shelf : shelves) {
         for (Pallet& pallet : shelf.pallets) {
@@ -96,19 +96,22 @@ bool Warehouse::checkEnoughRemainingSpace(std::string itemName, int itemCount) {
 }
 
 bool Warehouse::putItems(std::string itemName, int itemCount) {
-    if (!checkEmployeeAvailability() || !checkEnoughRemainingSpace(itemName, itemCount)) {
+    if (!checkEnoughRemainingSpace(itemName, itemCount)) {
         return false;
     }
 
     int itemsPut = 0;
     for (Shelf& shelf : shelves) {
         for (Pallet& pallet : shelf.pallets) {
-            if (pallet.getItemName() == itemName && !pallet.isFull()) {
-                while (pallet.getRemainingSpace() >= itemCount) {
-                    if (pallet.putOne()) {
-                        itemsPut++; // Remove this because it's redundant?
+            if (pallet.getItemName() == itemName) {
+                int remainingSpace = pallet.getRemainingSpace();
+                for (int i=0; i < remainingSpace; i++) {
+                    if (itemsPut == itemCount) {
+                        return true;
+                    } else if (pallet.putOne()) {
+                        itemsPut++;
                     }
-                }
+                }  
             }
         }
     }

@@ -27,7 +27,7 @@ class Warehouse {
 
         bool pickItems(std::string itemName, int itemCount);
 
-        bool checkEnoughRemainingSpace(std::string itemName, int itemCount);
+        int checkEnoughRemainingSpace(std::string itemName, int itemCount);
 
         bool putItems(std::string itemName, int itemCount);
 };
