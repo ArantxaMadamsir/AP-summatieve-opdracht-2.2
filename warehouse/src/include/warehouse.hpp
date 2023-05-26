@@ -17,9 +17,17 @@ class Warehouse {
 
         void addShelf(Shelf shelf);
 
+        bool checkEmployeeAvailability();
+
+        bool checkCertifiedEmployeeAvailability();
+
         bool rearrangeShelf(Shelf& shelf);
 
+        bool checkEnoughItems(std::string itemName, int itemCount);
+
         bool pickItems(std::string itemName, int itemCount);
+
+        bool checkEnoughRemainingSpace(std::string itemName, int itemCount);
 
         bool putItems(std::string itemName, int itemCount);
 };
