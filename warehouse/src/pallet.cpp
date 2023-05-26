@@ -9,6 +9,10 @@ std::string Pallet::getItemName() {
     return itemName;
 }
 
+int Pallet::getItemCapacity() {
+    return itemCapacity;
+}
+
 int Pallet::getItemCount() {
     return itemCount;
 }

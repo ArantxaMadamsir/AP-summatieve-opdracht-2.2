@@ -16,4 +16,6 @@ class Shelf : public IContainer {
         bool isEmpty() const override;
 
         bool isFull() const override;
+
+        friend std::ostream& operator<<(std::ostream& output, Shelf& shelf);
 };

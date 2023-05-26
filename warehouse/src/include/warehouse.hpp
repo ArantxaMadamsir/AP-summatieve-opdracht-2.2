@@ -30,4 +30,7 @@ class Warehouse {
         int checkEnoughRemainingSpace(std::string itemName, int itemCount);
 
         bool putItems(std::string itemName, int itemCount);
+
+        friend std::ostream& operator<<(std::ostream& output, Warehouse warehouse);
+
 };

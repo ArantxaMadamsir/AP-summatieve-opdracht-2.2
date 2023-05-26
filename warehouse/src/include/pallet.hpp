@@ -18,6 +18,8 @@ class Pallet : public IContainer {
 
         std::string getItemName();
 
+        int getItemCapacity();
+
         int getItemCount();
 
         int getRemainingSpace();

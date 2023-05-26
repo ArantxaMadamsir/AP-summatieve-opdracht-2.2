@@ -1,4 +1,5 @@
 #include "include/warehouse.hpp"
+#include "include/employee.hpp"
 #include <iostream>
 
 
@@ -116,4 +117,22 @@ bool Warehouse::putItems(std::string itemName, int itemCount) {
         }
     }
     return true;
+}
+
+std::ostream& operator<<(std::ostream& output, Warehouse warehouse) {
+    int employee_nr = 1;
+    output << "== Employees ==" << "\n";
+    for (Employee employee : warehouse.employees) {
+        output << "Employee " << employee_nr << "\n"
+               << employee << "\n" << "\n";
+        employee_nr ++;
+    }
+
+    int shelf_nr = 1;
+    output << "== Shelves ==" << "\n";
+    for (Shelf shelf : warehouse.shelves ) {
+        output << "Shelf " << shelf_nr << "\n"
+               << shelf << "\n" << "\n";
+        shelf_nr ++;
+    }
 }

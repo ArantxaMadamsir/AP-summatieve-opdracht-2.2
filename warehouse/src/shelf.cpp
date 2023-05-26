@@ -35,3 +35,17 @@ bool Shelf::isFull() const {
     }
     return fullPalletCount == 4;
 }
+
+std::ostream& operator<<(std::ostream& output, Shelf& shelf) {
+   
+    int pallet_nr = 1;
+    for (Pallet pallet : shelf.pallets) {
+        output << "Pallet " << pallet_nr << "\n" 
+                << "Item name: " << pallet.getItemName() << "\n"
+                << "Item capacity: " << pallet.getItemCapacity() << "\n"
+                << "Item count: " << pallet.getItemCount() << "\n"
+                << "Remaining space: " << pallet.getRemainingSpace() << "\n" << "\n";
+                pallet_nr ++;
+    }
+    return output;
+}
